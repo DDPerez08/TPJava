@@ -1,0 +1,17 @@
+-- Table: public."Estado"
+
+-- DROP TABLE public."Estado";
+
+CREATE TABLE public."Estado"
+(
+    "idEstado" integer NOT NULL,
+    "Nombre" character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "Estado_pkey" PRIMARY KEY ("idEstado")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."Estado"
+    OWNER to postgres;
