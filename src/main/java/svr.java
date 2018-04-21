@@ -1,16 +1,18 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
-public class svr {
 
+public abstract class svr {
 
-    public static Connection obtenerConexion() throws Exception
+    public svr(){
+    }
 
+    public static Connection getConnection() throws Exception
     {
         // Establece el nombre del driver a utilizar
         String dbDriver = "com.mysql.jdbc.Driver";
 
         // Establece la conexion a utilizar
-        String dbConnString = "jdbc:mysql://localhost/Java";
+        String dbConnString = "jdbc:postgresql://localhost/Java";
 
         // Establece el usuario de la base de datos
         String dbUser = "root";
@@ -22,7 +24,6 @@ public class svr {
         Class.forName(dbDriver).newInstance();
 
         // Retorna la conexion
-
         return DriverManager.getConnection(dbConnString, dbUser, dbPassword);
 
     }
